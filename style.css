@@ -1,5 +1,5 @@
 /* =========================
-   GLOBAL STYLES
+   GLOBAL
 ========================= */
 
 * {
@@ -29,7 +29,24 @@ ul {
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
+    display: block;
+}
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --green: #26351f;
+    --dark-green: #1c2818;
+    --brown: #8b5e34;
+    --cream: #f6f1e8;
+    --light: #fbfaf7;
+    --text: #5e5e55;
+    --border: #e4e0d7;
+    --white: #ffffff;
 }
 
 
@@ -40,18 +57,30 @@ img {
 .hero h1,
 .section-heading h2,
 .about-content h2,
-.reservation-content h2 {
+.reservation-content h2,
+.menu-content h3,
+.footer-brand h2,
+.stat h3 {
     font-family: "Playfair Display", serif;
 }
 
 
 /* =========================
-   NAVIGATION
+   HEADER
 ========================= */
 
 .header {
-    padding: 22px 7%;
-    background: #f6f1e8;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    padding: 20px 7%;
+
+    background: rgba(246, 241, 232, 0.94);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(38, 53, 31, 0.08);
 }
 
 .navbar {
@@ -61,38 +90,36 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    gap: 30px;
 }
 
 .logo {
-    font-size: 30px;
-    font-weight: 800;
+    font-family: "Playfair Display", serif;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    color: var(--green);
+
     letter-spacing: -1px;
-    color: #26351f;
+}
+
+.logo span,
+.footer-brand span {
+    color: var(--brown);
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 32px;
 }
 
 .nav-links a {
+    position: relative;
+
     color: #4d5148;
-    font-size: 14px;
-    font-weight: 500;
-
-    transition: 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #8b5e34;
-}
-
-.nav-button {
-    padding: 11px 21px;
-
-    background: #26351f;
-    color: white;
 
     font-size: 14px;
     font-weight: 600;
@@ -100,8 +127,47 @@ img {
     transition: 0.3s ease;
 }
 
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--brown);
+
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--brown);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-button {
+    padding: 12px 22px;
+
+    background: var(--green);
+    color: var(--white);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 4px;
+
+    transition: 0.3s ease;
+}
+
 .nav-button:hover {
-    background: #8b5e34;
+    background: var(--brown);
+    transform: translateY(-2px);
 }
 
 
@@ -110,95 +176,114 @@ img {
 ========================= */
 
 section {
-    padding: 90px 7%;
+    padding: 100px 7%;
 }
 
 .section-heading {
     max-width: 650px;
-    margin: 0 auto 50px;
+    margin: 0 auto 55px;
 
     text-align: center;
 }
 
 .section-heading p:first-child {
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 3px;
     font-weight: 700;
-    color: #8b5e34;
+
+    color: var(--brown);
 }
 
 .section-heading h2 {
-    font-size: 45px;
-    line-height: 1.15;
+    font-size: clamp(36px, 4vw, 52px);
+
+    line-height: 1.1;
 
     margin: 15px 0 20px;
 
-    color: #26351f;
+    color: var(--green);
+}
+
+.section-heading p:last-child {
+    color: var(--text);
 }
 
 
 /* =========================
-   HERO SECTION
+   HERO
 ========================= */
 
 .hero {
-    min-height: 680px;
+    min-height: 700px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    gap: 70px;
+    gap: 80px;
 
-    padding: 80px 7%;
+    padding: 90px 7%;
 
-    background: #f6f1e8;
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(139, 94, 52, 0.08),
+            transparent 30%
+        ),
+        var(--cream);
 
     overflow: hidden;
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 620px;
+
+    animation: slideUp 1s ease forwards;
 }
 
 .hero-label {
-    color: #8b5e34;
+    color: var(--brown);
 
     font-size: 13px;
     font-weight: 700;
 
     letter-spacing: 3px;
 
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: clamp(50px, 6vw, 82px);
+    font-size: clamp(55px, 7vw, 90px);
 
-    line-height: 0.98;
+    line-height: 0.95;
 
-    letter-spacing: -2px;
+    letter-spacing: -3px;
 
     color: #1f261d;
 
-    margin-bottom: 25px;
+    margin-bottom: 28px;
+}
+
+.hero h1 span {
+    color: var(--brown);
 }
 
 .hero-description {
-    max-width: 480px;
+    max-width: 500px;
 
-    color: #5e5e55;
+    color: var(--text);
 
     font-size: 17px;
 
     line-height: 1.8;
 
-    margin-bottom: 35px;
+    margin-bottom: 38px;
 }
 
 .hero-buttons {
     display: flex;
     align-items: center;
+
     gap: 15px;
 }
 
@@ -206,39 +291,47 @@ section {
 .secondary-button {
     display: inline-block;
 
-    padding: 14px 25px;
+    padding: 15px 26px;
 
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
+
+    border-radius: 4px;
 
     transition: 0.3s ease;
 }
 
 .primary-button {
-    background: #26351f;
-    color: white;
+    background: var(--green);
+    color: var(--white);
 }
 
 .primary-button:hover {
-    background: #8b5e34;
+    background: var(--brown);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(38, 53, 31, 0.18);
 }
 
 .secondary-button {
-    border: 1px solid #26351f;
-    color: #26351f;
+    border: 1px solid var(--green);
+    color: var(--green);
 }
 
 .secondary-button:hover {
-    background: #26351f;
-    color: white;
+    background: var(--green);
+    color: var(--white);
+
+    transform: translateY(-3px);
 }
 
 
-/* Hero image */
+/* =========================
+   HERO IMAGE
+========================= */
 
 .hero-image {
-    width: 470px;
-    height: 470px;
+    width: 480px;
+    height: 480px;
 
     flex-shrink: 0;
 
@@ -248,10 +341,10 @@ section {
 
     border: 12px solid white;
 
-    background: #ddd;
-
     box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.12);
+        0 30px 70px rgba(0, 0, 0, 0.16);
+
+    animation: zoomIn 1.2s ease forwards;
 }
 
 .hero-image img {
@@ -260,23 +353,26 @@ section {
 
     object-fit: cover;
 
-    display: block;
+    transition: 0.7s ease;
+}
+
+.hero-image:hover img {
+    transform: scale(1.08);
 }
 
 
 /* =========================
-   MENU SECTION
+   MENU
 ========================= */
 
 .menu-section {
-    background: #fff;
+    background: var(--white);
 }
 
 .menu-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 30px;
 
@@ -288,27 +384,31 @@ section {
 .menu-card {
     overflow: hidden;
 
-    background: white;
+    background: var(--white);
 
-    border: 1px solid #e4e0d7;
+    border: 1px solid var(--border);
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    border-radius: 8px;
+
+    transition: 0.4s ease;
 }
 
 .menu-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
 
     box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.10);
+        0 25px 50px rgba(38, 53, 31, 0.12);
 }
 
 
-/* Food image */
+/* =========================
+   MENU IMAGE
+========================= */
 
 .menu-image {
-    height: 270px;
+    position: relative;
+
+    height: 280px;
 
     overflow: hidden;
 
@@ -321,21 +421,44 @@ section {
 
     object-fit: cover;
 
-    display: block;
-
-    transition:
-        transform 0.5s ease;
+    transition: transform 0.6s ease;
 }
 
 .menu-card:hover .menu-image img {
-    transform: scale(1.05);
+    transform: scale(1.08);
+}
+
+.food-badge {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    padding: 7px 12px;
+
+    background: var(--white);
+
+    color: var(--green);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    border-radius: 30px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
 }
 
 
-/* Card content */
+/* =========================
+   MENU CONTENT
+========================= */
 
 .menu-content {
-    padding: 25px;
+    padding: 28px;
 }
 
 .menu-title {
@@ -346,19 +469,17 @@ section {
 
     gap: 15px;
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .menu-content h3 {
-    font-family: "Playfair Display", serif;
+    font-size: 25px;
 
-    font-size: 24px;
-
-    color: #26351f;
+    color: var(--green);
 }
 
 .menu-content span {
-    color: #8b5e34;
+    color: var(--brown);
 
     font-size: 16px;
 
@@ -372,18 +493,15 @@ section {
 
     font-size: 14px;
 
-    line-height: 1.7;
+    line-height: 1.8;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
-
-
-/* Order link */
 
 .menu-link {
     display: inline-block;
 
-    color: #26351f;
+    color: var(--green);
 
     font-size: 14px;
 
@@ -393,30 +511,49 @@ section {
 }
 
 .menu-link:hover {
-    color: #8b5e34;
+    color: var(--brown);
+
+    transform: translateX(5px);
 }
 
+
 /* =========================
-   ABOUT SECTION
+   ABOUT
 ========================= */
 
 .about-section {
     display: grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
-    gap: 70px;
+    gap: 80px;
 
     align-items: center;
 
-    background: #f6f1e8;
+    background: var(--cream);
 }
 
 .about-image {
-    min-height: 450px;
+    height: 500px;
 
-    background: #ddd;
+    overflow: hidden;
+
+    border-radius: 6px;
+
+    box-shadow: 20px 20px 0 var(--brown);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.6s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
 }
 
 .about-content {
@@ -424,7 +561,7 @@ section {
 }
 
 .about-content > p:first-child {
-    color: #8b5e34;
+    color: var(--brown);
 
     font-size: 13px;
 
@@ -434,44 +571,50 @@ section {
 }
 
 .about-content h2 {
-    font-size: 48px;
+    font-size: 52px;
 
-    line-height: 1.15;
+    line-height: 1.1;
 
-    color: #26351f;
+    color: var(--green);
 
     margin: 15px 0 25px;
 }
 
 .about-content > p {
-    color: #5e5e55;
+    color: var(--text);
 
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
 .text-link {
     display: inline-block;
 
-    margin-top: 25px;
+    margin-top: 28px;
 
-    color: #26351f;
+    color: var(--green);
 
     font-weight: 700;
+
+    border-bottom: 2px solid var(--brown);
+
+    padding-bottom: 5px;
 
     transition: 0.3s ease;
 }
 
 .text-link:hover {
-    color: #8b5e34;
+    color: var(--brown);
 }
 
 
 /* =========================
-   EXPERIENCE SECTION
+   EXPERIENCE
 ========================= */
 
 .experience-section {
     text-align: center;
+
+    background: var(--white);
 }
 
 .stats {
@@ -479,19 +622,39 @@ section {
 
     justify-content: center;
 
-    gap: 120px;
+    gap: 130px;
 
     max-width: 900px;
 
     margin: auto;
 }
 
+.stat {
+    position: relative;
+}
+
+.stat:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    right: -65px;
+    top: 15px;
+
+    width: 1px;
+    height: 70px;
+
+    background: var(--border);
+}
+
 .stat h3 {
-    font-family: "Playfair Display", serif;
+    font-size: 55px;
 
-    font-size: 48px;
+    color: var(--green);
+}
 
-    color: #26351f;
+.stat h3 span {
+    color: var(--brown);
 }
 
 .stat p {
@@ -506,14 +669,13 @@ section {
 ========================= */
 
 .testimonials-section {
-    background: #f6f1e8;
+    background: var(--cream);
 }
 
 .testimonial-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     gap: 30px;
 
@@ -523,27 +685,47 @@ section {
 }
 
 .testimonial {
-    padding: 35px;
+    position: relative;
 
-    background: white;
+    padding: 40px;
+
+    background: var(--white);
 
     border: 1px solid #e8e3d8;
+
+    border-radius: 6px;
+
+    transition: 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.stars {
+    color: var(--brown);
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
 }
 
 .testimonial p {
     font-family: "Playfair Display", serif;
 
-    font-size: 20px;
+    font-size: 21px;
 
     line-height: 1.6;
 
-    color: #26351f;
+    color: var(--green);
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .testimonial h4 {
-    color: #8b5e34;
+    color: var(--brown);
 
     font-size: 14px;
 }
@@ -556,17 +738,17 @@ section {
 .reservation-section {
     text-align: center;
 
-    background: #fff;
+    background: var(--white);
 }
 
 .reservation-content {
     max-width: 600px;
 
-    margin: 0 auto 40px;
+    margin: 0 auto 45px;
 }
 
 .reservation-content > p:first-child {
-    color: #8b5e34;
+    color: var(--brown);
 
     font-size: 13px;
 
@@ -576,9 +758,9 @@ section {
 }
 
 .reservation-content h2 {
-    font-size: 48px;
+    font-size: 52px;
 
-    color: #26351f;
+    color: var(--green);
 
     margin: 15px 0;
 }
@@ -594,8 +776,7 @@ section {
 
     display: grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 15px;
 }
@@ -605,7 +786,7 @@ section {
 .reservation-form button {
     width: 100%;
 
-    padding: 15px;
+    padding: 16px;
 
     border: 1px solid #d8d5cd;
 
@@ -616,11 +797,15 @@ section {
     font-size: 14px;
 
     outline: none;
+
+    border-radius: 4px;
 }
 
 .reservation-form input:focus,
 .reservation-form select:focus {
-    border-color: #8b5e34;
+    border-color: var(--brown);
+
+    box-shadow: 0 0 0 3px rgba(139, 94, 52, 0.08);
 }
 
 .reservation-form button {
@@ -628,11 +813,11 @@ section {
 
     border: none;
 
-    background: #26351f;
+    background: var(--green);
 
     color: white;
 
-    font-weight: 600;
+    font-weight: 700;
 
     cursor: pointer;
 
@@ -640,7 +825,11 @@ section {
 }
 
 .reservation-form button:hover {
-    background: #8b5e34;
+    background: var(--brown);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 25px rgba(139, 94, 52, 0.18);
 }
 
 
@@ -649,9 +838,9 @@ section {
 ========================= */
 
 .footer {
-    padding: 65px 7% 20px;
+    padding: 70px 7% 25px;
 
-    background: #26351f;
+    background: var(--green);
 
     color: white;
 }
@@ -659,8 +848,7 @@ section {
 .footer-content {
     display: grid;
 
-    grid-template-columns:
-        2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
 
     gap: 40px;
 
@@ -670,9 +858,7 @@ section {
 }
 
 .footer-brand h2 {
-    font-family: "Playfair Display", serif;
-
-    font-size: 32px;
+    font-size: 35px;
 
     margin-bottom: 10px;
 }
@@ -682,18 +868,22 @@ section {
     color: #c7c9c1;
 
     font-size: 14px;
+
+    line-height: 1.8;
 }
 
 .footer-column h3 {
     font-size: 14px;
 
     margin-bottom: 12px;
+
+    color: white;
 }
 
 .footer-bottom {
     max-width: 1400px;
 
-    margin: 50px auto 0;
+    margin: 55px auto 0;
 
     padding-top: 20px;
 
@@ -710,13 +900,79 @@ section {
 
 
 /* =========================
-   RESPONSIVE DESIGN
+   ANIMATIONS
 ========================= */
 
-@media (max-width: 900px) {
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        gap: 40px;
+    }
+
+    .hero-image {
+        width: 380px;
+        height: 380px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .menu-card:last-child {
+        grid-column: 1 / -1;
+
+        max-width: 500px;
+
+        margin: auto;
+    }
+
+    .stats {
+        gap: 70px;
+    }
+
+    .stat:not(:last-child)::after {
+        right: -35px;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .header {
+        padding: 18px 5%;
+    }
 
     .nav-links {
-        gap: 18px;
+        display: none;
     }
 
     .hero {
@@ -724,7 +980,7 @@ section {
 
         text-align: center;
 
-        padding-top: 70px;
+        padding: 80px 5%;
     }
 
     .hero-description {
@@ -737,12 +993,8 @@ section {
     }
 
     .hero-image {
-        width: 380px;
-        height: 380px;
-    }
-
-    .menu-grid {
-        grid-template-columns: 1fr;
+        width: 360px;
+        height: 360px;
     }
 
     .about-section {
@@ -753,8 +1005,8 @@ section {
         max-width: 700px;
     }
 
-    .stats {
-        gap: 60px;
+    .testimonial-grid {
+        grid-template-columns: 1fr;
     }
 
     .footer-content {
@@ -766,41 +1018,25 @@ section {
 @media (max-width: 600px) {
 
     section {
-        padding: 70px 5%;
-    }
-
-    .header {
-        padding: 18px 5%;
-    }
-
-    .navbar {
-        flex-wrap: wrap;
-
-        gap: 15px;
-    }
-
-    .nav-links {
-        order: 3;
-
-        width: 100%;
-
-        justify-content: center;
-
-        gap: 20px;
+        padding: 75px 5%;
     }
 
     .nav-button {
-        padding: 9px 14px;
+        padding: 10px 15px;
+
+        font-size: 12px;
     }
 
     .hero {
         min-height: auto;
 
-        padding: 70px 5%;
+        padding: 75px 5%;
     }
 
     .hero h1 {
-        font-size: 52px;
+        font-size: 55px;
+
+        letter-spacing: -2px;
     }
 
     .hero-buttons {
@@ -815,16 +1051,28 @@ section {
     }
 
     .hero-image {
-        width: 300px;
-        height: 300px;
+        width: 290px;
+        height: 290px;
     }
 
-    .section-heading h2 {
-        font-size: 36px;
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-card:last-child {
+        grid-column: auto;
+
+        max-width: none;
+    }
+
+    .about-image {
+        height: 350px;
+
+        box-shadow: 10px 10px 0 var(--brown);
     }
 
     .about-content h2 {
-        font-size: 38px;
+        font-size: 40px;
     }
 
     .stats {
@@ -833,12 +1081,12 @@ section {
         gap: 35px;
     }
 
-    .testimonial-grid {
-        grid-template-columns: 1fr;
+    .stat:not(:last-child)::after {
+        display: none;
     }
 
     .reservation-content h2 {
-        font-size: 38px;
+        font-size: 40px;
     }
 
     .reservation-form {

@@ -15,39 +15,26 @@
         rel="stylesheet"
     >
 
-    <!-- Stylesheet -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
-
+    <!-- NAVIGATION -->
     <header class="header">
         <nav class="navbar">
 
             <a href="#home" class="logo">
-                Bellora
+                Bellora<span>.</span>
             </a>
 
             <ul class="nav-links">
-                <li>
-                    <a href="#home">Home</a>
-                </li>
-
-                <li>
-                    <a href="#menu">Menu</a>
-                </li>
-
-                <li>
-                    <a href="#about">About</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
 
             <a href="#reservation" class="nav-button">
@@ -60,10 +47,7 @@
 
     <main>
 
-        <!-- =========================
-             HERO SECTION
-        ========================== -->
-
+        <!-- HERO -->
         <section id="home" class="hero">
 
             <div class="hero-content">
@@ -74,7 +58,7 @@
 
                 <h1>
                     Taste The<br>
-                    Extraordinary.
+                    <span>Extraordinary.</span>
                 </h1>
 
                 <p class="hero-description">
@@ -98,186 +82,163 @@
 
 
             <div class="hero-image">
-
                 <img
                     src="images/hero-food.jpg"
                     alt="Delicious meal served at Bellora Foods"
                 >
+            </div>
+
+        </section>
+
+
+        <!-- MENU -->
+        <section id="menu" class="menu-section">
+
+            <div class="section-heading">
+
+                <p>OUR SPECIALS</p>
+
+                <h2>
+                    Discover Our<br>
+                    Signature Dishes
+                </h2>
+
+                <p>
+                    Carefully prepared dishes made from
+                    fresh ingredients and bold flavors.
+                </p>
+
+            </div>
+
+
+            <div class="menu-grid">
+
+                <!-- DISH 1 -->
+                <article class="menu-card">
+
+                    <div class="menu-image">
+                        <img
+                            src="images/jollof-chicken.jpg"
+                            alt="Jollof rice with grilled chicken"
+                        >
+
+                        <div class="food-badge">
+                            Popular
+                        </div>
+                    </div>
+
+                    <div class="menu-content">
+
+                        <div class="menu-title">
+                            <h3>Bellora Jollof</h3>
+                            <span>₦7,500</span>
+                        </div>
+
+                        <p>
+                            Fragrant Nigerian jollof rice served
+                            with perfectly grilled chicken and
+                            fresh vegetables.
+                        </p>
+
+                        <a href="#reservation" class="menu-link">
+                            Order Now →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DISH 2 -->
+                <article class="menu-card">
+
+                    <div class="menu-image">
+                        <img
+                            src="images/grilled-fish.jpg"
+                            alt="Grilled turkey with vegetables"
+                        >
+
+                        <div class="food-badge">
+                            Chef's Choice
+                        </div>
+                    </div>
+
+                    <div class="menu-content">
+
+                        <div class="menu-title">
+                            <h3>Grilled Turkey</h3>
+                            <span>₦8,500</span>
+                        </div>
+
+                        <p>
+                            Freshly grilled turkey seasoned with
+                            aromatic herbs and served with
+                            colorful seasonal vegetables.
+                        </p>
+
+                        <a href="#reservation" class="menu-link">
+                            Order Now →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DISH 3 -->
+                <article class="menu-card">
+
+                    <div class="menu-image">
+                        <img
+                            src="images/pasta.jpg"
+                            alt="Creamy pasta dish"
+                        >
+
+                        <div class="food-badge">
+                            New
+                        </div>
+                    </div>
+
+                    <div class="menu-content">
+
+                        <div class="menu-title">
+                            <h3>Creamy Pasta</h3>
+                            <span>₦8,000</span>
+                        </div>
+
+                        <p>
+                            Rich and creamy pasta tossed with
+                            fresh herbs, vegetables, and our
+                            signature Bellora sauce.
+                        </p>
+
+                        <a href="#reservation" class="menu-link">
+                            Order Now →
+                        </a>
+
+                    </div>
+
+                </article>
 
             </div>
 
         </section>
 
 
-        <!-- =========================
-     MENU SECTION
-========================== -->
-
-<section id="menu" class="menu-section">
-
-    <div class="section-heading">
-
-        <p>OUR SPECIALS</p>
-
-        <h2>
-            Discover Our<br>
-            Signature Dishes
-        </h2>
-
-        <p>
-            Carefully prepared dishes made from
-            fresh ingredients and bold flavors.
-        </p>
-
-    </div>
-
-
-    <div class="menu-grid">
-
-        <!-- Dish 1 -->
-
-        <article class="menu-card">
-
-            <div class="menu-image">
-                <img
-                    src="images/jollof-chicken.jpg"
-                    alt="Jollof rice with grilled chicken"
-                >
-            </div>
-
-            <div class="menu-content">
-
-                <div class="menu-title">
-
-                    <h3>
-                        Bellora Jollof
-                    </h3>
-
-                    <span>
-                        ₦7,500
-                    </span>
-
-                </div>
-
-                <p>
-                    Fragrant Nigerian jollof rice served
-                    with perfectly grilled chicken and
-                    fresh vegetables.
-                </p>
-
-                <a href="#reservation" class="menu-link">
-                    Order Now →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- Dish 2 -->
-
-        <article class="menu-card">
-
-            <div class="menu-image">
-                <img
-                    src="images/grilled-fish.jpg"
-                    alt="Grilled fish with vegetables"
-                >
-            </div>
-
-            <div class="menu-content">
-
-                <div class="menu-title">
-
-                    <h3>
-                        Grilled turkey
-                    </h3>
-
-                    <span>
-                        ₦8,500
-                    </span>
-
-                </div>
-
-                <p>
-                    Freshly grilled turkey seasoned with
-                    aromatic herbs and served with
-                    colorful seasonal vegetables.
-                </p>
-
-                <a href="#reservation" class="menu-link">
-                    Order Now →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- Dish 3 -->
-
-        <article class="menu-card">
-
-            <div class="menu-image">
-
-                <img
-                    src="images/pasta.jpg"
-                    alt="Creamy pasta dish"
-                >
-
-            </div>
-
-            <div class="menu-content">
-
-                <div class="menu-title">
-
-                    <h3>
-                        Creamy Pasta
-                    </h3>
-
-                    <span>
-                        ₦8,000
-                    </span>
-
-                </div>
-
-                <p>
-                    Rich and creamy pasta tossed with
-                    fresh herbs, vegetables, and our
-                    signature Bellora sauce.
-                </p>
-
-                <a href="#reservation" class="menu-link">
-                    Order Now →
-                </a>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-        <!-- =========================
-             ABOUT SECTION
-        ========================== -->
-
+        <!-- ABOUT -->
         <section id="about" class="about-section">
 
             <div class="about-image">
                 <img
                     src="images/resturant.jpg"
-                    alt="Resturant image"
+                    alt="Bellora restaurant"
                 >
             </div>
 
 
             <div class="about-content">
 
-                <p>
-                    OUR STORY
-                </p>
+                <p>OUR STORY</p>
 
                 <h2>
                     Food That Brings
@@ -291,7 +252,7 @@
                     together.
                 </p>
 
-                <a href="#" class="text-link">
+                <a href="#contact" class="text-link">
                     Discover Our Story →
                 </a>
 
@@ -300,11 +261,8 @@
         </section>
 
 
-        <!-- =========================
-             EXPERIENCE SECTION
-        ========================== -->
-
-        <section class="experience-section">
+        <!-- EXPERIENCE -->
+        <section id="experience" class="experience-section">
 
             <div class="section-heading">
 
@@ -322,41 +280,18 @@
             <div class="stats">
 
                 <div class="stat">
-
-                    <h3>
-                        10+
-                    </h3>
-
-                    <p>
-                        Years of Experience
-                    </p>
-
+                    <h3>10<span>+</span></h3>
+                    <p>Years of Experience</p>
                 </div>
 
-
                 <div class="stat">
-
-                    <h3>
-                        25+
-                    </h3>
-
-                    <p>
-                        Signature Dishes
-                    </p>
-
+                    <h3>25<span>+</span></h3>
+                    <p>Signature Dishes</p>
                 </div>
 
-
                 <div class="stat">
-
-                    <h3>
-                        5K+
-                    </h3>
-
-                    <p>
-                        Happy Guests
-                    </p>
-
+                    <h3>5K<span>+</span></h3>
+                    <p>Happy Guests</p>
                 </div>
 
             </div>
@@ -364,17 +299,12 @@
         </section>
 
 
-        <!-- =========================
-             TESTIMONIALS
-        ========================== -->
-
+        <!-- TESTIMONIALS -->
         <section class="testimonials-section">
 
             <div class="section-heading">
 
-                <p>
-                    OUR GUESTS
-                </p>
+                <p>OUR GUESTS</p>
 
                 <h2>
                     What People Say
@@ -386,6 +316,10 @@
             <div class="testimonial-grid">
 
                 <article class="testimonial">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
 
                     <p>
                         "The food was amazing and the atmosphere
@@ -400,6 +334,10 @@
 
 
                 <article class="testimonial">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
 
                     <p>
                         "Bellora has quickly become one of my
@@ -417,10 +355,7 @@
         </section>
 
 
-        <!-- =========================
-             RESERVATION SECTION
-        ========================== -->
-
+        <!-- RESERVATION -->
         <section
             id="reservation"
             class="reservation-section"
@@ -502,23 +437,14 @@
     </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer
-        id="contact"
-        class="footer"
-    >
+    <!-- FOOTER -->
+    <footer id="contact" class="footer">
 
         <div class="footer-content">
 
-
             <div class="footer-brand">
 
-                <h2>
-                    Bellora
-                </h2>
+                <h2>Bellora<span>.</span></h2>
 
                 <p>
                     Good food. Great moments.
@@ -529,9 +455,7 @@
 
             <div class="footer-column">
 
-                <h3>
-                    Visit Us
-                </h3>
+                <h3>Visit Us</h3>
 
                 <p>
                     24 Victoria Street<br>
@@ -543,9 +467,7 @@
 
             <div class="footer-column">
 
-                <h3>
-                    Opening Hours
-                </h3>
+                <h3>Opening Hours</h3>
 
                 <p>
                     Monday - Sunday<br>
@@ -557,9 +479,7 @@
 
             <div class="footer-column">
 
-                <h3>
-                    Contact
-                </h3>
+                <h3>Contact</h3>
 
                 <p>
                     +234 800 000 0000<br>
@@ -580,6 +500,8 @@
         </div>
 
     </footer>
+
     <script src="script.js"></script>
+
 </body>
 </html>
