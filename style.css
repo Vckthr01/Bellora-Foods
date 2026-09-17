@@ -1,3 +1,7 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,9 +13,10 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "DM Sans", sans-serif;
     color: #222;
     line-height: 1.6;
+    background: #fff;
 }
 
 a {
@@ -23,36 +28,80 @@ ul {
     list-style: none;
 }
 
+img {
+    max-width: 100%;
+}
+
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.hero h1,
+.section-heading h2,
+.about-content h2,
+.reservation-content h2 {
+    font-family: "Playfair Display", serif;
+}
+
 
 /* =========================
    NAVIGATION
 ========================= */
 
 .header {
-    padding: 20px 7%;
-    border-bottom: 1px solid #ddd;
+    padding: 22px 7%;
+    background: #f6f1e8;
 }
 
 .navbar {
+    max-width: 1400px;
+    margin: auto;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #26351f;
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: #4d5148;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #8b5e34;
 }
 
 .nav-button {
-    padding: 10px 18px;
-    background: #222;
+    padding: 11px 21px;
+
+    background: #26351f;
     color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.nav-button:hover {
+    background: #8b5e34;
 }
 
 
@@ -65,35 +114,47 @@ section {
 }
 
 .section-heading {
-    text-align: center;
     max-width: 650px;
     margin: 0 auto 50px;
+
+    text-align: center;
 }
 
 .section-heading p:first-child {
     font-size: 13px;
-    letter-spacing: 2px;
-    font-weight: bold;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #8b5e34;
 }
 
 .section-heading h2 {
-    font-size: 42px;
-    line-height: 1.2;
-    margin: 15px 0;
+    font-size: 45px;
+    line-height: 1.15;
+
+    margin: 15px 0 20px;
+
+    color: #26351f;
 }
 
 
 /* =========================
-   HERO
+   HERO SECTION
 ========================= */
 
 .hero {
-    min-height: 650px;
+    min-height: 680px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
-    background: #f4f0e6;
+
+    gap: 70px;
+
+    padding: 80px 7%;
+
+    background: #f6f1e8;
+
+    overflow: hidden;
 }
 
 .hero-content {
@@ -101,96 +162,204 @@ section {
 }
 
 .hero-label {
+    color: #8b5e34;
+
     font-size: 13px;
-    letter-spacing: 2px;
-    font-weight: bold;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
 }
 
 .hero h1 {
-    font-size: 64px;
-    line-height: 1.05;
-    margin: 20px 0;
+    font-size: clamp(50px, 6vw, 82px);
+
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+
+    color: #1f261d;
+
+    margin-bottom: 25px;
 }
 
 .hero-description {
-    max-width: 500px;
-    margin-bottom: 30px;
+    max-width: 480px;
+
+    color: #5e5e55;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
 }
 
 .hero-buttons {
     display: flex;
+    align-items: center;
     gap: 15px;
 }
 
 .primary-button,
 .secondary-button {
-    padding: 13px 24px;
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
 }
 
 .primary-button {
-    background: #222;
+    background: #26351f;
     color: white;
 }
 
-.secondary-button {
-    border: 1px solid #222;
+.primary-button:hover {
+    background: #8b5e34;
 }
 
+.secondary-button {
+    border: 1px solid #26351f;
+    color: #26351f;
+}
+
+.secondary-button:hover {
+    background: #26351f;
+    color: white;
+}
+
+
+/* Hero image */
+
 .hero-image {
-    width: 450px;
-    height: 450px;
+    width: 470px;
+    height: 470px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 12px solid white;
+
     background: #ddd;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
 }
 
 
 /* =========================
-   MENU
+   MENU SECTION
 ========================= */
+
+.menu-section {
+    background: #fff;
+}
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 30px;
+
+    max-width: 1250px;
+
+    margin: auto;
 }
 
 .menu-card {
-    border: 1px solid #ddd;
+    overflow: hidden;
+
+    border: 1px solid #e4e0d7;
+
+    background: white;
+
+    transition: 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
 .menu-image {
     height: 250px;
+
     background: #ddd;
 }
 
 .menu-content {
-    padding: 20px;
+    padding: 25px;
 }
 
 .menu-content h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 24px;
+
+    color: #26351f;
+
     margin-bottom: 8px;
+}
+
+.menu-content p {
+    color: #6a6a62;
+
+    font-size: 14px;
 }
 
 .menu-content span {
     display: block;
-    margin-top: 15px;
-    font-weight: bold;
+
+    margin-top: 18px;
+
+    color: #8b5e34;
+
+    font-size: 17px;
+    font-weight: 700;
 }
 
 
 /* =========================
-   ABOUT
+   ABOUT SECTION
 ========================= */
 
 .about-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap: 70px;
+
     align-items: center;
-    background: #f4f0e6;
+
+    background: #f6f1e8;
 }
 
 .about-image {
     min-height: 450px;
+
     background: #ddd;
 }
 
@@ -198,21 +367,51 @@ section {
     max-width: 550px;
 }
 
+.about-content > p:first-child {
+    color: #8b5e34;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
 .about-content h2 {
-    font-size: 45px;
-    line-height: 1.2;
+    font-size: 48px;
+
+    line-height: 1.15;
+
+    color: #26351f;
+
     margin: 15px 0 25px;
+}
+
+.about-content > p {
+    color: #5e5e55;
+
+    line-height: 1.8;
 }
 
 .text-link {
     display: inline-block;
-    margin-top: 20px;
-    font-weight: bold;
+
+    margin-top: 25px;
+
+    color: #26351f;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.text-link:hover {
+    color: #8b5e34;
 }
 
 
 /* =========================
-   EXPERIENCE
+   EXPERIENCE SECTION
 ========================= */
 
 .experience-section {
@@ -221,12 +420,28 @@ section {
 
 .stats {
     display: flex;
+
     justify-content: center;
-    gap: 100px;
+
+    gap: 120px;
+
+    max-width: 900px;
+
+    margin: auto;
 }
 
 .stat h3 {
-    font-size: 45px;
+    font-family: "Playfair Display", serif;
+
+    font-size: 48px;
+
+    color: #26351f;
+}
+
+.stat p {
+    color: #6a6a62;
+
+    font-size: 14px;
 }
 
 
@@ -235,20 +450,46 @@ section {
 ========================= */
 
 .testimonials-section {
-    background: #f4f0e6;
+    background: #f6f1e8;
 }
 
 .testimonial-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
     gap: 30px;
+
     max-width: 900px;
+
     margin: auto;
 }
 
 .testimonial {
-    padding: 30px;
+    padding: 35px;
+
     background: white;
+
+    border: 1px solid #e8e3d8;
+}
+
+.testimonial p {
+    font-family: "Playfair Display", serif;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    color: #26351f;
+
+    margin-bottom: 20px;
+}
+
+.testimonial h4 {
+    color: #8b5e34;
+
+    font-size: 14px;
 }
 
 
@@ -258,39 +499,92 @@ section {
 
 .reservation-section {
     text-align: center;
+
+    background: #fff;
 }
 
 .reservation-content {
     max-width: 600px;
+
     margin: 0 auto 40px;
 }
 
+.reservation-content > p:first-child {
+    color: #8b5e34;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
 .reservation-content h2 {
-    font-size: 45px;
+    font-size: 48px;
+
+    color: #26351f;
+
     margin: 15px 0;
+}
+
+.reservation-content > p:last-child {
+    color: #6a6a62;
 }
 
 .reservation-form {
     max-width: 800px;
+
     margin: auto;
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap: 15px;
 }
 
 .reservation-form input,
 .reservation-form select,
 .reservation-form button {
-    padding: 14px;
-    border: 1px solid #ccc;
-    font: inherit;
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #d8d5cd;
+
+    background: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus {
+    border-color: #8b5e34;
 }
 
 .reservation-form button {
     grid-column: 1 / -1;
-    background: #222;
+
+    border: none;
+
+    background: #26351f;
+
     color: white;
+
+    font-weight: 600;
+
     cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.reservation-form button:hover {
+    background: #8b5e34;
 }
 
 
@@ -299,24 +593,207 @@ section {
 ========================= */
 
 .footer {
-    padding: 60px 7% 20px;
-    background: #222;
+    padding: 65px 7% 20px;
+
+    background: #26351f;
+
     color: white;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
     gap: 40px;
+
+    max-width: 1400px;
+
+    margin: auto;
 }
 
-.footer-column h3 {
+.footer-brand h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 32px;
+
     margin-bottom: 10px;
 }
 
+.footer-brand p,
+.footer-column p {
+    color: #c7c9c1;
+
+    font-size: 14px;
+}
+
+.footer-column h3 {
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
 .footer-bottom {
-    margin-top: 50px;
+    max-width: 1400px;
+
+    margin: 50px auto 0;
+
     padding-top: 20px;
-    border-top: 1px solid #555;
+
+    border-top: 1px solid #53604d;
+
     text-align: center;
+}
+
+.footer-bottom p {
+    color: #aeb3a8;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 70px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 380px;
+        height: 380px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        max-width: 700px;
+    }
+
+    .stats {
+        gap: 60px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 70px 5%;
+    }
+
+    .header {
+        padding: 18px 5%;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 20px;
+    }
+
+    .nav-button {
+        padding: 9px 14px;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding: 70px 5%;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .hero-image {
+        width: 300px;
+        height: 300px;
+    }
+
+    .section-heading h2 {
+        font-size: 36px;
+    }
+
+    .about-content h2 {
+        font-size: 38px;
+    }
+
+    .stats {
+        flex-direction: column;
+
+        gap: 35px;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reservation-content h2 {
+        font-size: 38px;
+    }
+
+    .reservation-form {
+        grid-template-columns: 1fr;
+    }
+
+    .reservation-form button {
+        grid-column: auto;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
 }
